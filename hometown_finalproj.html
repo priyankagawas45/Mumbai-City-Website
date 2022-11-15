@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Mumbai city Information
+    </title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!-- custom css file link  -->
+    
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap");
+
+    
+
+      * {
+        font-family: "Nunito", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-transform: capitalize;
+        outline: none;
+        border: none;
+        text-decoration: none;
+        transition: all 0.2s linear;
+      }
+body{
+
+  background-color: #EEEEEE;
+}
+     
+
+      html {
+        font-size: 62.5%;
+        overflow-x: hidden;
+        scroll-padding-top: 6rem;
+        scroll-behavior: smooth;
+      }
+
+      section {
+        padding: 2rem 9%;
+      }
+
+      .heading {
+        text-align: center;
+        padding: 2.5rem 0;
+      }
+
+      .heading span {
+        font-size: 3.5rem;
+        background: rgba(255, 165, 0, 0.2);
+        color: var(--orange);
+        border-radius: 0.5rem;
+        padding: 0.2rem 1rem;
+      }
+
+      .heading span.space {
+        background: none;
+      }
+
+      
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: grey;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 9%;
+      }
+
+
+      header .navbar a {
+        color: white;
+        font-size: 2.5rem;
+        margin: 0 0.8rem;
+      }
+
+      header .navbar a:hover {
+        color: var(--orange);
+      }
+
+    
+      #menu-bar {
+        color: mediumvioletred;
+        border: 0.1rem solid #fff;
+        border-radius: 0.5rem;
+        font-size: 3rem;
+        padding: 0.5rem 1.2rem;
+        cursor: pointer;
+        display: none;
+      }
+
+      .home {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        
+      }
+
+      .home .content {
+        text-align: center;
+      }
+
+      .home .content h3 {
+        padding-top: 30px;
+        font-size: 4.5rem;
+        color: blue;
+      
+        text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
+      }
+
+      .home .content p {
+        font-size: 2.5rem;
+        color: #fff;
+        padding: 0.5rem 0;
+      }
+
+     
+
+      .gallery .box-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+
+      .gallery .box-container .box {
+        overflow: hidden;
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+        border: 1rem solid #fff;
+        border-radius: 0.5rem;
+        flex: 1 1 30rem;
+        height: 25rem;
+        position: relative;
+      }
+
+      .gallery .box-container .box img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .gallery .box-container .box .content {
+        position: absolute;
+        top: -100%;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 2rem;
+        padding-top: 5rem;
+      }
+
+      
+      .history .content p {
+        padding-top: 10;
+       font-size: 20px;
+       color: black;
+      }
+      .culture_heritage .h4{
+        font-size: 30px;
+
+      }
+      .culture_heritage  p{
+
+font-size: 20px;
+       color: black;
+      }
+
+       h3{
+
+        text-align: center;
+        color: navy;
+        font-size: 40px;
+       } 
+      h4{
+
+        font-size: 35px;
+      }
+.culture_heritage p
+{
+font-size: 20px;
+
+}
+      .tourist_places .box-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .tourist_places .box-container .box {
+        flex: 1 1 30rem;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+      }
+
+      .tourist_places .box-container .box img {
+        height: 25rem;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .tourist_places .box-container .box .content {
+        padding: 2rem;
+      }
+
+      .tourist_places .box-container .box .content h5 {
+        font-size: 2rem;
+        color: #333;
+      }
+
+     
+
+      .tourist_places .box-container .box .content p {
+        font-size: 1.7rem;
+        color: #666;
+        padding: 1rem 0;
+      }
+
+     
+   .helpline_numbers p{
+
+    font-size: 20px;
+    text-align: center;
+   }
+    
+      .credit {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background: #333;
+        text-align: center;
+        color: #EEEEEE;
+      }
+
+      
+     
+
+/* Styles for website counter container */
+.website-counter {
+  font-size: 30px;
+  text-align: center;
+}
+
+.visitors-counter{
+  font-weight: bold;
+  color: blue;
+  font-size: xx-large;
+  padding-top: 30px;
+ font-size: 30px;
+  text-align: center;
+}
+    </style>
+  </head>
+  <body>
+    
+    <!-- header section starts  -->
+
+    <header>
+      <h1>
+        Mumbai,India
+      </h1>
+      <div id="menu-bar" class="fas fa-bars"></div>
+
+      <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#history">History</a>
+        <a href="#tourist_places">Tourist Places</a>
+        <a href="#culture_heritage">Culture & Heritage</a>
+        <a href="#gallery">Photo Gallery</a>
+        <a href="#helpline_numbers">Helpline Number</a>
+      </nav>
+    </header>
+    <!-- header section ends -->
+
+    
+    <!-- home section starts  -->
+
+    <section class="home" id="home">
+      <div class="content">
+      </br></br>
+        <h3>Mumbai City Information</h3>
+   
+    <img class="mySlides" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/680/original/1.jpg?1668449087" style="width:100%"> 
+    <img class="mySlides" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/681/original/2.jpg?1668449245" style="width:100%"> 
+    <img class="mySlides" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/682/original/44.jpg?1668449362" style="width:100%">
+    <img class="mySlides" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/683/original/3.jpg?1668449460" style="width:100%">
+    <img class="mySlides" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/684/original/5.jpg?1668449488" style="width:100%">
+    <img class="mySlides" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/685/original/6.jpg?1668449555" style="width:100%">
+    <img class="mySlides" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/686/original/4.jpg?1668449593" style="width:100%">
+    
+    </div>
+      </div>
+
+    </section>
+    <!-- home section ends -->
+
+   
+    <!-- History section starts  -->
+    <section class="history" id="history"> 
+      <div class="content">
+        <h3>History of Mumbai City</h3>
+      </br>
+        <p>
+        
+The name of the city, Mumbai is derived from patron deity the Mother Goddess Mumba Devi,
+ worshiped by the earliest inhabitants the Kolis.
+The District Mumbai City  is situated on the West coast of India between 18˚ 52′ 
+and 19˚ 04′ North latitudes and 72˚47′ and 72˚54′ East longitudes.
+ It is surrounded on three sides by water, the open Arabian Sea to the West and
+  South and Thane creek to the East. To the North it is bordered by
+   Mumbai (Suburban) District.
+It is the Southern part of Greater Mumbai Municipal corporation, 
+which covers an area of 157.0 sq.kms as per the Surveyor General of India and has 
+a population of 30,85,411 persons as per the Census 2011.
+The literacy rate of Mumbai district is 89.2 percent. The sex ratio of Mumbai
+ district is 832.
+        </p>
+       
+      </div>
+
+    </section>
+
+    <!-- History section ends -->
+
+
+    <!-- Tourist places section starts  -->
+<h3>Tourist places in Mumbai </h3>
+    <section class="tourist_places" id="tourist_places">
+       <div class="box-container">
+        <div class="box">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/747/original/marin__drive.jpg?1668456763" alt="" />
+          <div class="content">
+            <h5>Gateway of India</h5>
+            <p>
+              The objective of this 85 feet tall structure was to commemorate King George, the Fifth’s visit to Mumbai. Incidentally, the last of British soldiers that were to leave India after independence, departed through Gateway of India. The architecture is a perfect blend of three styles, namely Hindu, Islam and European Gothic styles. You could take ferry from here to visit Elephanta Caves.
+            </p>
+             
+          </div>
+        </div>
+
+
+        <div class="box">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/721/original/elephanta-caves.jpg?1668453411" alt="" />
+          <div class="content">
+            <h5> Elephanta Caves</h5>
+            <p>
+              Elephanta caves are in Elephanta Island, which is roughly around 40 minute ferry ride from Gateway of India. UNESCO has declared Elephanta Caves, belonging to 600 AD, as World Heritage Site. The stone sculptures of the Hindu and Buddhist gods are damaged because of the Portuguese who used them in their sword practice. Regardless, the artwork in the sculptures speak of the artistic excellence of the bygone era and no wonder, Elephanta Caves is considered one of the seven wonders of India.
+            </p>
+            
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/727/original/Marine-Drive.jpg?1668453930" alt="" />
+          <div class="content">
+            <h5> Marine Drive</h5>
+            <p>
+              Marine Drive is in the heart of Mumbai and hence you can have easy access to it from anywhere in Mumbai. It is 3km long and it borders Arabian Sea forming a bay. The stretch is ‘C’ shaped that links Nariman Point and Babulnath. The place offers spectacular view of sunset. Tourists are attracted to Marine Drive where they could stroll in the walkway and experience the cool breeze.
+            </p>
+            
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/738/original/Chhatrapati_Shivaji_Maharaj_Vastu_Sangrahalaya.jpg?1668456008" alt="" />
+          <div class="content">
+            <h5>Chhatrapati Shivaji Maharaj Vastu Sangrahalaya</h5>
+            <p>
+              Chhatrapati Shivaji Maharaj Vastu Sangrahalaya or Prince of Wales Museum has one of the most extensive collection depicting India’s legacy. It was built in early 20th century in honour of Edward VIII, the prince of Wales at that time. The museum is divided into art, archaeology and natural history and approximately 50,000 artefacts can be found here. The artifacts here can be traced back to Indus Valley Civilization, Gupta Dynasty, Mauryan dynasty etc and interestingly, many artifacts here also have foreign origins. Another thing to note is the museum’s massive and stunning Neo Gothic architecture.
+            </p>
+           
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/739/original/haji-ali-shrine.jpg?1668456046" alt="" />
+          <div class="content">
+            <h5>Haji Ali Shrine</h5>
+            <p>
+              Located in the heart of Worli, Haji Ali Shrine reflects the Indian Muslim architecture. The 85 feet tall structure is located in 4500 meters area of land. The Shrine is constructed with marble that matches the marbles used in the construction of Taj Mahal. The pillars of the Shrine are artistic and the mirror work in the monument is stunning. The stupendous architecture of the Haji Ali Shrine attracts people of various religions and beliefs.
+            </p>
+            </div>
+        </div>
+
+        <div class="box">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/741/original/Chhatrapati_Shivaji_Terminus_%28Victoria_Terminus%29.jpg?1668456133" alt="" />
+          <div class="content">
+            <h5>Chhatrapati Shivaji Terminus</h5>
+            <p>
+             This was earlier known as Victoria Terminus. The construction was completed in the year 1897. UNESCO has declared the terminus as World Heritage Site in the year 2004. The building is a representation of architecture of various cultures including traditional Indian, Victorian and Gothic. Though it is a terminus to board and get off trains, you cannot help marveling at the stunning architecture of the building. Whether you intend to take a train or not, this is a must visit site in Mumbai.
+            </p>
+          
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/742/original/beaches.jpg?1668456242" alt="" />
+          <div class="content">
+            <h5> Beaches of Mumbai</h5>
+            <p>
+              Mumbai is essentially a collection of islands and therefore it is no surprise that the beaches here are one of the major attractions of this city. The Juhu beach stretch is famous for housing the residences of many Bollywood celebrities like Amitabh Bachchan, Vidya Balan, Mahesh Bhatt and many more. Aksa Beach, Girgaum Chowpatty, Kalamb Beach and Marvé Beach are some other beaches that can be visited.
+            </p>
+          
+          </div>
+        </div>
+
+
+
+        <div class="box">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/743/original/siddhivinayak-temple-mumbai.jpg?1668456340" alt="" />
+          <div class="content">
+            <h5>Siddhivinayak Temple</h5>
+            <p>
+              Siddhivinayak Temple is one of the most visited places of worship in Mumbai. Many politicians, Bollywood celebrities frequent this temple to seek blessings of Lord Ganesha. Even Tim Cook, the CEO of Apple started his India trip after visiting this temple. Seek few moments of peace and offer prayers to ‘wish granting Lord Ganesha.’
+            </p>
+          
+          </div>
+        </div>
+
+
+
+        <div class="box">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/745/original/kk.jpg?1668456572" alt="" />
+          <div class="content">
+            <h5>Markets of Mumbai</h5>
+            <p>
+              Mumbai is a haven for shopping, mainly for its fashion street shops and flea markets. Colaba Causeway, Linking Road, Hill Road, Fashion street offer some great choices for fashionistas at very low cost. Buy designer knock offs, junk jewellery and even branded clothes here at budgeted rates. Chor Bazaar is India’s largest flea market and is almost 150 years old. Set up in the British Era, it is famously said that you can find almost everything here. Crawford Market and Chincholi Bunder Link Road are other markets for good deals.
+            </p>
+          
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+    <!-- Tourist places section ends -->
+
+
+    <!-- Culture and Heritage section starts  -->
+
+    <section class="culture_heritage" id="culture_heritage">
+      <h3 class="heading"> Culture & Heritage
+      </h3>
+      
+        
+<h4>Gateway Of India</h4>
+<p>
+Initially used as a jetty for the fisher folk of the area, Gateway of India at
+ Apollo Bunder was later turned into a landing place for British governors and
+  other officials. Today, it is a favourite among locals and tourists for its
+   proximity to Taj Mahal Palace & Tower and the beautiful view of the Arabian Sea.
+    Built in the Indo-Saracenic style, the arches and dome of the Gateway are a
+     remarkable sight. A visit here can also be combined with a walk along
+      Colaba Causeway, located right behind the Gateway.
+      </p>
+      </br> </br>
+
+<h4>Asiatic library</h4>
+<p>The Asiatic Society of Mumbai at Fort was established in 1804 by Sir James Mackintosh, a Scottish jurist, politician and historian. Many musicians have regaled crowds of adoring listeners on the steps of the library, the most recent being Ayushmann Khurana at the Kala Ghoda Festival 2016. While the building itself is a pleasure to explore, don’t miss the treasures housed within the library. Notable among these is the manuscript of Dante Alighieri’s Divine Comedy and 15,000 other rare and valuable books. Totally, there are over a hundred thousand books in the library.
+ </p></br> </br>
+
+<h4>Kala Ghoda</h4>
+<p>Kala Ghoda is the name of an area that’s dotted with historical and cultural landmarks like Jehangir Art Gallery and the Pavement Gallery, Bombay Natural History Society, David Sassoon Library and Lions Gate. But it also refers to the black stone statue of King Edward VII, who was the then Prince of Wales. He is seen astride a horse crafted by Jewish businessman and philanthropist Albert Abdullah David Sassoon. This statue is now present at the Byculla Zoo but Kala Ghoda (literally ‘black horse’) continues to embody its memory. An exploration of Kala Ghoda is incomplete without a visit to the Esplanade Mansion, India’s oldest surviving cast iron building.
+ </p></br> </br>
+
+<h4>Rajabai Clock Tower</h4>
+<p>The Rajabai Clock Tower at the Fort campus of the University of Mumbai is our very own answer to London’s Big Ben. Designed by Sir George Gilbert Scott, an English architect, the Tower took nearly ten years to be built and was finally finished in November 1878. Although a melange of Venetian and Gothic styles, the Tower is very much local, having been fashioned from buff coloured Kurla stone. Don’t miss its beautiful stained glass windows which can rival any other in Mumbai. A visit here can be combined with an exploration of the University’s campus. Once, the Rajabai Clock Tower was the tallest structure in Mumbai but not anymore.
+ </p></br> </br>
+
+<h4>Mount Merry Church</h4>
+<p>This Roman Catholic Basilica in Bandra is where the entire city converges for midnight mass on the eve of Christmas. The church also comes alive during the feast of the Blessed Virgin Mary, which is followed by the week-long Bandra Fair in September. Mount Mary Church sits on a hillock overlooking the Arabian Sea and the present structure is over 100 years old. However, in reality, the church dates back to the 17th century when it was destroyed and had to be rebuilt.
+ </br> </br>
+</p>
+
+<h4>Banganga Tank</h4>
+<p>This ancient water tank is located in the Walkeshwar Temple Complex at Malabar Hill. The silent cistern with its surrounding ducks and playing children can have a mesmerising effect on many. Originally built by a minister in the court of Silhara dynasty kings of Thane in the 1127 AD, Banganga Tank was rebuilt in 1715 AD. Over the years, the main temple has been reconstructed several times. The tank owes its name to a legend that says Lakshmana created a tributary of the Ganga to quench his brother Rama’s thirst.
+</p> </br> </br>
+
+<h4>Culture of Mumbai</h4>
+<p>The culture of Mumbai is a combination of tradition, religions, cuisines, music and fine arts. Termed as ‘The city that never sleeps’, it is one of the busiest cities in India. Fun is equally important to the people of Mumbai. This is evident from the way the festivals are celebrated. Though Diwali, Eid, Holi and Christmas are celebrated enthusiastically, nothing compares to the festival of Ganesh Chaturthi. Sometime in late August or early September, Ganesh Chaturthi is a 10-day fest celebrated with grandeur and glory. Mumbai is famous for its handmade fabrics, textiles and jewellery. One can also shop at the markets like Chor Bazaar for knick knacks like antique clocks, wooden furnishings and paintings. A main reason to visit Mumbai is the food. Be it street food or local favourites or the seafood dishes, your taste buds will be thanking you for taking this trip.
+
+      </p>
+    </section>
+    <!--  Culture and Heritage section ends -->
+
+
+    <!-- gallery section starts  -->
+
+    <section class="gallery" id="gallery">
+      <h3 class="heading">
+    Photo Gallery Of Mumbai City
+      </h3>
+
+      <div class="box-container">
+        <div class="box">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/602/original/Chhatrapati-Shivaji-Terminus.jpg?1668433432" alt="" />
+          <div class="content">  
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/603/original/mumbai-1370023__340.jpg?1668433545" alt="" />
+          <div class="content">
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/604/original/istockphoto-860528756-170667a_%281%29.jpg?1668433612" alt="" />
+          <div class="content">
+           
+          
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/605/original/Elephenta-Caves.jpg?1668433666" alt="" />
+          <div class="content">
+       
+            
+          
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/606/original/Film-City.jpg?1668433713" alt="" />
+          <div class="content">
+        
+          
+          </div>
+        </div>
+        <div class="box">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/607/original/water-kingdom-mumbai-tourism-entry-fee-timings-holidays-reviews-header.jpg?1668433775" alt="" />
+          <div class="content">
+          
+            
+          
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/608/original/Colaba-Causeway-1.jpg?1668433814" alt="" />
+          <div class="content">
+           
+          
+          
+          </div>
+        </div>
+        <div class="box">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/609/original/Juhu-Beach.jpg?1668433873" alt="" />
+          <div class="content">
+           
+          </div>
+        </div>
+
+
+        <div class="box">
+          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/053/610/original/Sanjay-Gandhi-National-Park-1.jpg?1668433940" alt="" />
+          <div class="content">
+           
+           
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- gallery section ends -->
+
+    
+
+    <!-- Helpline section starts  -->
+
+    <section class="helpline_numbers" id="helpline_numbers">
+       <h3 class="heading">
+    Helpline Numbers
+      </h3>
+      <p>
+
+Citizen’s Call center – 155300</br>
+Child Helpline – 1098</br>
+Women Helpline – 1091</br>
+Crime Stopper – 1090</br>
+Commissioner of Rescue & Relief – 1070</br>
+NIC Service Desk – 1800 111 555</br>
+Chief Electoral Officer – 1800-22-1950</br>
+PDS Helpline – 1800 22 4950 & 1967</br>
+District Control Room – 1077</br>
+Maharashtra Control Room – 022 – 22027990</br></br>
+      </p>
+
+    <div class="visitors-counter">Visitor counter  </div>
+    <div class="website-counter"></div>
+  
+
+    </section>
+
+    <!-- Helpline section ends -->
+
+    
+
+    <!-- footer section start -->
+
+      <h1 class="credit">
+        created by <span> Priyanka Gawas </span>
+      </h1>
+    </section>
+  <!-- footer section end -->
+
+
+
+    <!--  js file code-->
+    <script >
+
+      var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2500); // Change image  seconds
+}
+
+
+
+
+var counterContainer = document.querySelector(".website-counter");
+var resetButton = document.querySelector("#reset");
+var visitCount = localStorage.getItem("page_view"); // Change visitors view
+
+// Check if page_view entry is present
+if (visitCount) {
+  visitCount = Number(visitCount) + 1;
+  localStorage.setItem("page_view", visitCount);
+} else {
+  visitCount = 1;
+  localStorage.setItem("page_view", 1);
+}
+counterContainer.innerHTML = visitCount;
+
+// Adding onClick event listener
+resetButton.addEventListener("click", () => {
+  visitCount = 1;
+  localStorage.setItem("page_view", 1);
+  counterContainer.innerHTML = visitCount;
+});
+
+
+
+    </script>
+  </body>
+</html>
