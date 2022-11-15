@@ -12,7 +12,7 @@
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
 
-    <!-- font awesome cdn link  -->
+    <!-- font awesome link  -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -632,7 +632,7 @@ Maharashtra Control Room – 022 – 22027990</br></br>
     <!--  js file code-->
     <script >
 
-      var myIndex = 0;
+var myIndex = 0; //
 carousel();
 
 function carousel() {
@@ -651,7 +651,6 @@ function carousel() {
 
 
 var counterContainer = document.querySelector(".website-counter");
-var resetButton = document.querySelector("#reset");
 var visitCount = localStorage.getItem("page_view"); // Change visitors view
 
 // Check if page_view entry is present
@@ -670,8 +669,6 @@ resetButton.addEventListener("click", () => {
   localStorage.setItem("page_view", 1);
   counterContainer.innerHTML = visitCount;
 });
-
-
 
     </script>
   </body>
